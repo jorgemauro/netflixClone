@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const Avatar = () => <a role="button" tabindex="0" aria-haspopup="true" aria-expanded="false"
                         aria-label="jorge - Conta e Configurações"><img

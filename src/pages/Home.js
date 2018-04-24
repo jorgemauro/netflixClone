@@ -22,6 +22,7 @@ const mapStateToProps = state => {
         gender5:state.movies.gender5,
         movieBilboard:state.movies.movieBilboard,
         movie: state.movies.movie,
+        mylist:state.movies.mylist,
     }
 }
 
@@ -31,14 +32,52 @@ class Home extends Component {
     }
     render() {
         const movieBilboard=this.props.movieBilboard;
-        const moviesTopRated = this.props.moviesTopRated.map((movie) => <MovieDetailsOriginais key={movie.id} movie={movie}/>);
-        const inTheater = this.props.moviesTheater.map((movie) => <MovieDetails key={movie.id} movie={movie} addList={()=>this.props.addList(movie)}/>);
-        const popular = this.props.moviesPopular.map((movie) => <MovieDetails key={movie.id} movie={movie} addList={()=>this.props.addList(movie)}/>);
-        const gende1=this.props.gender1.map((movie) => <MovieDetails key={movie.id} movie={movie} addList={()=>this.props.addList(movie)} />);
-        const gende2=this.props.gender2.map((movie) => <MovieDetails key={movie.id} movie={movie} addList={()=>this.props.addList(movie)}/>);
-        const gende3=this.props.gender3.map((movie) => <MovieDetails key={movie.id} movie={movie} addList={()=>this.props.addList(movie)}/>);
-        const gende4=this.props.gender4.map((movie) => <MovieDetails key={movie.id} movie={movie} addList={()=>this.props.addList(movie)}/>);
-        const gende5=this.props.gender5.map((movie) => <MovieDetails key={movie.id} movie={movie} addList={()=>this.props.addList(movie)}/>);
+        const moviesTopRated = this.props.moviesTopRated.map((movie) => <MovieDetailsOriginais
+            key={movie.id}
+            movie={movie}
+        />);
+        const inTheater = this.props.moviesTheater.map((movie) => <MovieDetails
+            key={movie.id}
+            movie={movie}
+            addList={()=>this.props.addList(movie)}
+            mylist={this.props.mylist}
+        />);
+        const popular = this.props.moviesPopular.map((movie) => <MovieDetails
+            key={movie.id}
+            movie={movie}
+            addList={()=>this.props.addList(movie)}
+            mylist={this.props.mylist}
+        />);
+        const gende1=this.props.gender1.map((movie) => <MovieDetails
+            key={movie.id}
+            movie={movie}
+            addList={()=>this.props.addList(movie)}
+            mylist={this.props.mylist}
+        />);
+        const gende2=this.props.gender2.map((movie) => <MovieDetails
+            key={movie.id}
+            movie={movie}
+            addList={()=>this.props.addList(movie)}
+            mylist={this.props.mylist}
+        />);
+        const gende3=this.props.gender3.map((movie) => <MovieDetails
+            key={movie.id}
+            movie={movie}
+            addList={()=>this.props.addList(movie)}
+            mylist={this.props.mylist}
+        />);
+        const gende4=this.props.gender4.map((movie) => <MovieDetails
+            key={movie.id}
+            movie={movie}
+            addList={()=>this.props.addList(movie)}
+            mylist={this.props.mylist}
+        />);
+        const gende5=this.props.gender5.map((movie) => <MovieDetails
+            key={movie.id}
+            movie={movie}
+            addList={()=>this.props.addList(movie)}
+            mylist={this.props.mylist}
+        />);
         return (
             <div className="home">
                 <MenuPrincipal search={()=>this.props.searchFilm}/>
